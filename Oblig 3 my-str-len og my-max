@@ -1,0 +1,7 @@
+Oppgave 1a) 
+def my_str_len(l):
+  if len(l) == 0: 
+      return []
+  else:
+      return [len(l[0])] + my_str_len(l[1:])
+
