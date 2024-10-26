@@ -1,1 +1,25 @@
+Oppgave 1 B) Pyret:
+#Opprett studenter 
+#student1 = Student "(Tommy Johnsen, 1, gruppe12) 
+#student2 = Student "(Daniel Hansen, 2, gruppe32) 
+#student3 = Student "(Mathias Ødegaard, 3, gruppe25) 
+#student4 = Student "(Erling Thuram, 4, gruppe13) 
+#student5 = Student "(Joakim Brøgersen, 5, gruppe7)
 
+students = table: 
+  firstName, studentID, group 
+  row: "Tommy Johnsen", "1", "Gruppe12"
+  row: "Daniel Hansen", "2", "Gruppe32"
+  row: "Mathias Ødegaard", "3", "Gruppe25"
+  row: "Erling Thuram", "4", "Gruppe13"
+  row: "Joakim Brøgersen", "5", "Gruppe7"
+end 
+
+fun finngruppe(navn, liste): 
+  liste. filter(lam(row): row ["firstName"] == navn 
+    end)
+end
+
+#Test 
+
+finngruppe("Joakim Brøgersen", students)
