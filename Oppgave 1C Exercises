@@ -1,0 +1,8 @@
+Oppgave 9.1.1:
+def moon_weight(earth_weight: int) -> int:
+    """
+    Regn ut hva vekten på jorden vil bli på månen
+    """
+    return earth_weight // 6
+print(moon_weight(300))
+print(moon_weight(100))
