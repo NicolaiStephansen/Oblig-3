@@ -6,3 +6,25 @@ def moon_weight(earth_weight: int) -> int:
     return earth_weight // 6
 print(moon_weight(300))
 print(moon_weight(100))
+
+Oppgave 9.1.6.1
+A)
+numbers = [10, 3, -2, 0, 1, 0]
+
+# Konverter listen av tall til en liste av string  basert på "sign"
+sign_labels =list(map(lambda n: "pos" if n > 0 else "neg" if n < 0 else "zero", numbers))
+
+print(sign_labels)
+
+B)
+words = ["eple", "bønner", "taco", "vannmelon" , "Ingen"]
+
+# sjekk om string har lengen av 5
+has_length_five = len(list(filter(lambda wd: len(wd) == 5, words))) >0
+print(has_length_five)  # Output: hvis en string har lengden av 5 true
+
+C)
+numbers = [5, 10, 12, 16, 18, 23, 25]
+
+even_between_10_and_20 = list(filter(lambda n: n % 2 == 0 and 10 <= n <= 20, numbers))
+print(even_between_10_and_20)  # Output: [10, 12, 18, 20]
