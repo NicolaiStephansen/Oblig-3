@@ -28,3 +28,56 @@ numbers = [5, 10, 12, 16, 18, 23, 25]
 
 even_between_10_and_20 = list(filter(lambda n: n % 2 == 0 and 10 <= n <= 20, numbers))
 print(even_between_10_and_20)  # Output: [10, 12, 18, 20]
+
+Oppgave 9.1.8.2
+A)
+def all_z_words(wordlist: list) -> list:
+    """Produser liste av ord fra input som inneholder z."""
+    zlist = []  # Start med en tom liste
+    for wd in wordlist:
+        if "z" in wd:
+            zlist.append(wd)  # Append word to zlist if it contains "z"
+    return zlist
+words = ["pizza", "apple", "zebra", "banana", "zoom"]
+z_words = all_z_words(words)
+print(z_words)  # forventet output: ["pizza", "zebra", "zoom"]
+
+B)
+# definer funksjonen med filter
+def all_z_words(wordlist: list) -> list:
+    """Produser en liste av ord fra input som inneholder z med filter."""
+    return list(filter(lambda wd: "z" in wd, wordlist))
+
+# Simplified test function
+def test_all_z_words():
+    test_cases = [
+        # Test med ord som bruker z
+        (["pizza", "apple", "zebra", "banana", "zoom"], ["pizza", "zebra", "zoom"], "Test Case 1"),
+        
+        # Test med ord uten z
+        (["apple", "banana", "orange"], [], "Test Case 2"),
+        
+        # en tom liste
+        ([], [], "Test Case 3"),
+    ]
+    
+    all_passed = True
+    for input_data, expected_output, description in test_cases:
+        result = all_z_words(input_data)
+        if result == expected_output:
+            print(f"{description}: Passed")
+        else:
+            print(f"{description}: Failed")
+            print(f"  Input: {input_data}")
+            print(f"  Expected Output: {expected_output}")
+            print(f"  Actual Output: {result}")
+            all_passed = False
+
+    if all_passed:
+        print("All tests passed!")
+    else:
+        print("Some tests failed.")
+
+# test
+test_all_z_words()
+
