@@ -23,3 +23,40 @@ end
 #Test 
 
 finngruppe("Joakim Brøgersen", students)
+
+Python:
+
+    def __init__(self, navn, student_id):
+        self.navn = navn
+        self.student_id = student_id
+
+# Definer "klassen" for Grupper - for å funksjonalisere forholdet mellom student og gruppe
+class Gruppe:
+    def __init__(self, gruppenavn, studenter):
+        self.gruppenavn = gruppenavn
+        self.studenter = studenter
+
+#Funksjonen som finner ut hvilken gruppe en student hører til basert på student_id og gruppenr. 
+def finn_gruppe_for_student(student_id, grupper):
+    for gruppe in grupper:
+        for student in gruppe.studenter:
+            if student.student_id == student_id:
+                return gruppe.gruppenavn
+    return "Studenten tilhører ingen gruppe" 
+
+
+# Eksempler som tar utgangspunkt i funksjonen
+student1 = Student("Lise", 1994)
+student2 = Student("Nils", 578)
+student3 = Student("Kenneth", 32)
+student4 = Student("Marcus", 2894)
+
+gruppe1 = Gruppe("Gruppe 1", [student1, student2])
+gruppe2 = Gruppe("Gruppe 2", [student3, student4])
+
+#Tilgjengelige grupper
+grupper = [gruppe1, gruppe2]
+
+print(finn_gruppe_for_student(578, grupper)) #Output: Gruppe 1
+print(finn_gruppe_for_student(32, grupper)) #Output: Gruppe 2
+print(finn_gruppe_for_student(12395, grupper)) #Output: Studenten tilhører ingen gruppe
