@@ -81,3 +81,29 @@ def test_all_z_words():
 # test
 test_all_z_words()
 
+Oppgave 9.2.2
+
+# Step 1: De forskjellige rommene
+room_dict = {
+    "Room A": 40,
+    "Room B": 120,
+    "Room C": 49,
+    "Room D": 80,
+    "Room E": 50
+}
+
+# Step 2: Sjekke seter i spesefikke rom
+room_name = "Room B"
+seats_in_room = room_dict.get(room_name, "Room not found")
+print(f"Seats in {room_name}: {seats_in_room}")
+
+# Step 3: øke kapasiten av et spesifikt rom med 10 plasser
+room_name = "Room A"
+if room_name in room_dict:
+    room_dict[room_name] += 10
+print(f"Updated seats in {room_name}: {room_dict[room_name]}")
+
+# Step 4: Finne alle rom som har plass til 50 personer
+rooms_with_50_plus = [room for room, seats in room_dict.items() if seats >= 50]
+print("Rooms that can seat at least 50 students:", rooms_with_50_plus)
+
