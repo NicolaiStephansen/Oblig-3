@@ -1,0 +1,15 @@
+Oppgave A)
+highest_2023 = df_filtered[df_filtered['2023'] == df_filtered['2023'][df_filtered['2023'] != float('inf')].max()]
+print("\nTask A: Kommune med høyeste prosent i 2023:")
+print(highest_2023[['Kommune', '2023']])
+
+Oppgave B)
+lowest_2023 = df_filtered[df_filtered['2023'] == df_filtered['2023'][df_filtered['2023'] != float('inf')].min()]
+print("\nTask B: Kommune med laveste prosent i 2023:")
+print(lowest_2023[['Kommune', '2023']])
+
+Oppgave C)
+df_filtered['Average_2015_2023'] = df_filtered[headers].replace(float('inf'), pd.NA).mean(axis=1).round(1)
+highest_avg = df_filtered[df_filtered['Average_2015_2023'] == df_filtered['Average_2015_2023'].max()]
+print("\nTask C: Kommune med høyeste gjennomsnittlige prosent fra 2015 til 2023:")
+print(highest_avg[['Kommune', 'Average_2015_2023']])
